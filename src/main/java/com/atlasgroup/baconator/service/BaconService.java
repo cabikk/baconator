@@ -1,7 +1,9 @@
 package com.atlasgroup.baconator.service;
 
+import com.atlasgroup.baconator.model.BaconExchange;
+
 public interface BaconService {
-  
-  String getBacon(int quantity);
+
+  BaconExchange getBacon(int quantity);
 
 }

@@ -10,13 +10,15 @@ import com.atlasgroup.baconator.service.BaconService;
 
 @RestController
 public class BaconController {
-  
+
   @Autowired
   private BaconService baconService;
 
   @RequestMapping("/give-me-bacon/{howmuch}")
-  public ResponseEntity<Object> index(@PathVariable("howmuch") int quantity) {
-    return new ResponseEntity<>("Test: "+baconService.getBacon(quantity), HttpStatus.OK);
+  public ResponseEntity<Object> getBacon(@PathVariable("howmuch") int quantity) {
+
+    return new ResponseEntity<>(baconService.getBacon(quantity), HttpStatus.OK);
+
   }
 
 }
