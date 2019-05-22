@@ -24,7 +24,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -35,13 +34,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-aop</artifactId>
+	    </dependency>	
 		<dependency>
 		 	<groupId>org.springframework.boot</groupId>
 		 	<artifactId>spring-boot-devtools</artifactId>
 		 	<optional>true</optional>
-		</dependency>
-		
+		</dependency>	
 		<dependency>
 		      <groupId>io.reactivex.rxjava2</groupId>
 		      <artifactId>rxjava</artifactId>
@@ -53,11 +54,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<!-- 				<configuration>
-					<jvmArguments>
-						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
-					</jvmArguments>
-				</configuration> -->
 			</plugin>
 		</plugins>
 	</build>

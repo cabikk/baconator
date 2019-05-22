@@ -14,7 +14,7 @@ public class BaconController {
   @Autowired
   private BaconService baconService;
 
-  @RequestMapping("/give-me-bacon/{howmuch}")
+  @RequestMapping("/give-me-bacon/{howmuch:[0-9]+}")
   public ResponseEntity<Object> getBacon(@PathVariable("howmuch") int quantity) {
 
     return new ResponseEntity<>(baconService.getBacon(quantity), HttpStatus.OK);
