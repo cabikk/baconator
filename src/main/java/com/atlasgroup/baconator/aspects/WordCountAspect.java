@@ -8,15 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.atlasgroup.baconator.model.BaconExchange;
 import com.atlasgroup.baconator.model.BaconItem;
-import com.atlasgroup.baconator.service.StatisticsService;
 import com.atlasgroup.baconator.utils.WordCountUtil;
 
 @Aspect
 @Component
 public class WordCountAspect {
-
+  
   @Autowired
-  private StatisticsService statisticsService;
+  private WordCountUtil wordCountUtil;
 
   @AfterReturning(pointcut = "@annotation(WordCount)", returning = "retVal")
   public void countWordHistogram(Object retVal) throws Throwable {
@@ -27,7 +26,7 @@ public class WordCountAspect {
 
     if (baconsListOptional.isPresent())
       baconsListOptional.get()
-          .forEach(item -> WordCountUtil.processWordsBreak(item.getData(), statisticsService));
+          .forEach(item -> wordCountUtil.processWordsBreak(item.getData()));
 
   }
 
